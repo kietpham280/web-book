@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc Sách Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        #sidebar {
+            width: 250px;
+            background: #f4f4f4;
+            padding: 10px;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .chapter-link {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .chapter-link:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Danh sách chương</h2>
+        <div class="chapter-link" onclick="loadChapter(1)">Chương 1</div>
+        <div class="chapter-link" onclick="loadChapter(2)">Chương 2</div>
+        <div class="chapter-link" onclick="loadChapter(3)">Chương 3</div>
+    </div>
+    <div id="content">
+        <h2 id="chapter-title">Chương 1</h2>
+        <p id="chapter-content">Nội dung chương 1...</p>
+    </div>
+
+    <script>
+        const chapters = {
+            1: "Nội dung chương 1: Đây là phần mở đầu của câu chuyện...",
+            2: "Nội dung chương 2: Tiếp tục câu chuyện với những tình tiết hấp dẫn...",
+            3: "Nội dung chương 3: Cao trào của câu chuyện bắt đầu..."
+        };
+
+        function loadChapter(chapterNumber) {
+            document.getElementById('chapter-title').innerText = "Chương " + chapterNumber;
+            document.getElementById('chapter-content').innerText = chapters[chapterNumber];
+        }
+    </script>
+</body>
+</html>
