@@ -308,3 +308,7 @@
 .pcalibre:hover {
   color: red;
 }
+
+span {
+  font-size: 2em;
+}
